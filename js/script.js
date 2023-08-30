@@ -72,8 +72,21 @@ const handleToggleSpinner = (isLoading) => {
 };
 
 // Features details Button
-const featuredDetails = (id) => {
-  console.log(id);
+const featuredDetails = async (id) => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/ai/tool/${id}`
+  );
+  const data = await res.json();
+  showFeaturedDetails(data.data);
+};
+const showFeaturedDetails = (data) => {
+  console.log(data);
+  const ShowDetailsModal = document.getElementById('show-details-modal');
+  ShowDetailsModal.innerHTML = `
+  <img class="w-1/2" src="${data.image_link[0]}"/>
+  <h3 class="font-bold text-lg w-1/2">${data.description}</h3>
+  `;
+
   details_modal.showModal();
 };
 
