@@ -42,12 +42,15 @@ const displayTools = (tools, isShowAll) => {
               <h3 class="mt-5">${tool.name}</h3>
               <p class="font-light">${tool.published_in}</p>
               <div>
-                <button class="btn btn-error bg-red-500">details</button>
+                <button onClick = "featuredDetails('${
+                  tool.id
+                }')" class="btn btn-error bg-red-500">details</button>
               </div>
             </div>
     `;
     toolsContainer.appendChild(div);
   });
+  handleToggleSpinner(false);
 };
 
 // Handle  show all tools
@@ -56,4 +59,22 @@ const handleShowAll = () => {
   //   console.log('clicked');
   loadTools(true);
 };
+
+// Toggle Spinner
+const handleToggleSpinner = (isLoading) => {
+  const spinnerLoad = document.getElementById('loading-spinner');
+  //   console.log(spinnerLoad);
+  if (isLoading) {
+    spinnerLoad.classList.remove('hidden');
+  } else {
+    spinnerLoad.classList.add('hidden');
+  }
+};
+
+// Features details Button
+const featuredDetails = (id) => {
+  console.log(id);
+  details_modal.showModal();
+};
+
 loadTools();

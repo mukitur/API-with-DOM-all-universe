@@ -1,6 +1,6 @@
 ## AI-universe-hub
 
-#Netlify Live Link:
+# Netlify Live Link:
 
 # API Links
 

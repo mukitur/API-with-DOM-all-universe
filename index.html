@@ -22,6 +22,11 @@
       </div>
       <!-- card -->
       <section>
+        <!-- add spinner -->
+        <div id="loading-spinner" class="text-center mx-auto my-10">
+          <span class="loading loading-ring loading-lg text-red-600"></span>
+        </div>
+        <!-- main card -->
         <div
           id="tools-container"
           class="grid grid-cols md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12"
@@ -36,6 +41,19 @@
           Show All
         </button>
       </div>
+      <!-- modal start-->
+
+      <dialog id="details_modal" class="modal">
+        <form method="dialog" class="modal-box w-11/12 max-w-5xl">
+          <h3 class="font-bold text-lg">Hello!</h3>
+          <p class="py-4">Click the button below to close</p>
+          <div class="modal-action">
+            <!-- if there is a button, it will close the modal -->
+            <button class="btn">Close</button>
+          </div>
+        </form>
+      </dialog>
+      <!-- modal end -->
     </main>
     <script src="js/script.js"></script>
   </body>
